@@ -31,6 +31,12 @@ app.use(
 
 // use new passUserToView middleware here must be after session middleware but before homepage route
 app.use(passUserToView); 
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
+    user: req.session.user,
+  });
+});
+
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {
