@@ -17,15 +17,15 @@
     <a href="<%= application.postingLink %>" target="_blank">View job posting</a>
 
     <% } %>
+    <p>The status of this application is: <%= application.status %></p>
 
-    <p>Current Status: <%= application.status %></p>
-
-    <a href="/users/<%= user._id %>/applications/<%= application._id %>/edit">Edit this application</a>
-
+    <a href="/users/<%= user._id %>/applications/<%= application._id %>/edit"> Edit this application</a>
+    
     <form
-      action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
-      method="post">
-      <button type="submit">Delete this application</button>
-    </form>
+        action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
+        method="POST"
+    >
+    <button type="submit">Delete this application</button>
+  </form>
   </body>
 </html>
